@@ -1,0 +1,220 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  background-color: #111;
+  color: #999;
+}
+
+.portrait {
+  background-image: url(profile.jpeg);
+  background-size: cover;
+  background-position: top;
+}
+
+.profile {
+  padding: 5%;
+  min-height: 1000px;
+}
+
+.profile-header,
+.profile-section {
+  padding-bottom: 30%;
+}
+
+.profile-section h2 {
+  border-top: 4px solid;
+  color: slateblue;
+  margin-bottom: 40px;
+  font-size: 1.4rem;
+  padding-top: 20px;
+  top: 0;
+  background-color: #111;
+  position: sticky;
+  box-shadow: 0 0 10px 20px #111;
+}
+
+.name {
+  font-size: 30px;
+  line-height: 1.5;
+  margin-bottom: 1.8em;
+  font-style: italic;
+  font-family: 'Merriweather', serif;
+}
+
+.name-job {
+  display: inline-block;
+  vertical-align: top;
+  height: 1.4em;
+  overflow: hidden;
+  color: white;
+  padding-right: 0.5em;
+  position: relative;
+}
+
+.name-job::after {
+  content: '.';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: -1em;
+  box-shadow: inset 0 0 10px 7px #111;
+}
+
+.name-job-list {
+  animation-name: rolling;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+}
+
+.name-title {
+  font-size: 1.6em;
+  line-height: 1;
+  color: cornflowerblue;
+  margin-left: -0.25em;
+  position: relative;
+}
+
+.talk {
+  font-size: 1.1em;
+}
+
+.icons {
+  margin: 30px 0;
+}
+
+.icons a {
+  background-image: url(icons.png);
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.icons a.instagram {
+  background-position: left top;
+}
+.icons a.soundcloud {
+  background-position: right top;
+}
+.icons a:hover {
+  background-position-y: bottom;
+}
+
+.timeline {
+  color: #666;
+}
+
+.timeline li {
+  padding-bottom: 30px;
+}
+
+.timeline li:last-child {
+  padding-bottom: 0;
+}
+
+.timeline h3 {
+  color: cornflowerblue;
+  font-size: 1.1rem;
+  padding-bottom: 0.2em;
+}
+
+.graph li {
+  background: rgb(198, 96, 200);
+  background: linear-gradient(
+    90deg,
+    rgba(198, 96, 200, 1) 0%,
+    rgba(139, 196, 209, 1) 100%
+  );
+  color: #111;
+  padding: 0.3em 1em;
+  margin: 0.3em 0;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+.graph li::before {
+  content: attr(data-score);
+  float: right;
+}
+
+.graph li[data-score='100%'] {
+  width: 100%;
+}
+.graph li[data-score='90%'] {
+  width: 90%;
+}
+.graph li[data-score='80%'] {
+  width: 80%;
+}
+.graph li[data-score='70%'] {
+  width: 70%;
+}
+
+.list dt {
+  color: cornflowerblue;
+  float: left;
+  width: 5em;
+}
+
+@media (min-width: 768px) {
+  .portrait {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 60vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .profile {
+    margin-left: 60vw;
+  }
+
+  .name {
+    font-size: 2.3vw;
+  }
+}
+
+/* 애니메이션 관련 코드입니다. */
+@keyframes rolling {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-25%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  75% {
+    transform: translateY(-75%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
